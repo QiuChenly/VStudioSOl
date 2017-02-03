@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
 
-public class httphelper
+public class qiuchenhelper
 {
     #region //取出中间文本
     /// <summary>
@@ -50,7 +50,7 @@ public class httphelper
 /// <summary>
 /// Http操作类.
 /// </summary>
-public class HttpHelperA
+public class HttpHelper
 {
     private const int ConnectionLimit = 100;
     //编码
@@ -77,7 +77,7 @@ public class HttpHelperA
     //custom heads
     private Dictionary<string, string> _headers = new Dictionary<string, string>();
 
-    public HttpHelperA()
+    public HttpHelper()
     {
         _headers.Clear();
         //随机一个useragent
@@ -477,7 +477,7 @@ public class HttpHelperA
         return cc;
     }
 
-
+    public CookieCollection getCookieCollection() { return _cookiecollection; }
     public void DebugCookies()
     {
         Trace.WriteLine("**********************BEGIN COOKIES*************************");
