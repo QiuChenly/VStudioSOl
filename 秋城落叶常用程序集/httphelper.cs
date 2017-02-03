@@ -285,8 +285,8 @@ public class HttpHelper
         Byte[] mine = null;
         try
         {
-            ServicePointManager.ServerCertificateValidationCallback = new System.Net.Security.RemoteCertificateValidationCallback(CheckCertificate);
-            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(url);
+            ServicePointManager.ServerCertificateValidationCallback = new RemoteCertificateValidationCallback(CheckCertificate);
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             request.UserAgent = _useragent;
             request.Timeout = _timeout;
             request.ContentType = _contenttype;
@@ -353,7 +353,75 @@ public class HttpHelper
             return null;
         }
     }
+    public MemoryStream HttpGetMemoryStream(String url)
+    {
+        try
+        {
+            ServicePointManager.ServerCertificateValidationCallback = new RemoteCertificateValidationCallback(CheckCertificate);
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+            request.UserAgent = _useragent;
+            request.Timeout = _timeout;
+            request.ContentType = _contenttype;
+            request.Accept = _accept;
+            request.Method = "GET";
+            request.Referer = url;
+            request.KeepAlive = true;
+            request.AllowAutoRedirect = true;
+            request.UnsafeAuthenticatedConnectionSharing = true;
+            request.CookieContainer = new CookieContainer();
+            //据说能提高性能
+            request.Proxy = null;
+            if (_cookiecollection != null)
+            {
+                foreach (Cookie c in _cookiecollection)
+                    c.Domain = request.Host;
+                request.CookieContainer.Add(_cookiecollection);
+            }
 
+            foreach (KeyValuePair<String, String> hd in _headers)
+            {
+                request.Headers[hd.Key] = hd.Value;
+            }
+
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            Stream stream = response.GetResponseStream();
+            MemoryStream ms = new MemoryStream();
+
+            byte[] b = new byte[1024];
+            while (true)
+            {
+                int s = stream.Read(b, 0, b.Length);
+                ms.Write(b, 0, s);
+                if (s == 0 || s < b.Length)
+                {
+                    break;
+                }
+            }
+            if (request.CookieContainer != null)
+            {
+                response.Cookies = request.CookieContainer.GetCookies(request.RequestUri);
+            }
+
+            if (response.Cookies != null)
+            {
+                _cookiecollection = response.Cookies;
+            }
+            if (response.Headers["Set-Cookie"] != null)
+            {
+                _cookies = response.Headers["Set-Cookie"];
+            }
+
+            stream.Close();
+            stream.Dispose();
+            response.Close();
+            return ms;
+        }
+        catch (Exception e)
+        {
+            Trace.WriteLine("HttpGetMine Error: " + e.Message);
+            return null;
+        }
+    }
     /// <summary>
     /// 发送POST请求
     /// </summary>

@@ -35,8 +35,8 @@
             this.txtpwd = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtVerify = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.pic_verify = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_verify)).BeginInit();
             this.SuspendLayout();
             // 
             // btnlogin
@@ -99,20 +99,20 @@
             this.txtVerify.Size = new System.Drawing.Size(145, 21);
             this.txtVerify.TabIndex = 6;
             // 
-            // pictureBox1
+            // pic_verify
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(63, 77);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(130, 53);
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
+            this.pic_verify.Location = new System.Drawing.Point(63, 77);
+            this.pic_verify.Name = "pic_verify";
+            this.pic_verify.Size = new System.Drawing.Size(130, 53);
+            this.pic_verify.TabIndex = 7;
+            this.pic_verify.TabStop = false;
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(359, 209);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pic_verify);
             this.Controls.Add(this.txtVerify);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtpwd);
@@ -123,7 +123,7 @@
             this.Name = "FrmMain";
             this.Text = "QQ腾讯网登录";
             this.Load += new System.EventHandler(this.FrmMain_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_verify)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,7 +138,7 @@
         private System.Windows.Forms.TextBox txtpwd;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtVerify;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pic_verify;
     }
 }
 

@@ -23,8 +23,15 @@ namespace WinFrm_TestDemo
         private void txtuser_Leave(object sender, EventArgs e)
         {
             //检查是否需要验证码
-            qq.CheckVerify(txtuser.Text.Trim());
-            
+            int state = qq.CheckVerify(txtuser.Text.Trim());
+            if (state == 3)
+            {
+                pic_verify.Image = qq.getCapture();
+            }
+            else if (state == 2)
+            {
+                MessageBox.Show("获取验证码出现错误！请重新打开本程序！");
+            }
         }
 
         private void btnMe_Click(object sender, EventArgs e)
