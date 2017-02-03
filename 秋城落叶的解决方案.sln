@@ -5,12 +5,13 @@ VisualStudioVersion = 15.0.26127.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF-TestDemo", "WPF-TestDemo\WPF-TestDemo.csproj", "{FA03B9AF-E810-474B-BD98-FA11753BA42B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{172AC7BF-374D-4616-B53F-F99B900EA8BC}"
-	ProjectSection(SolutionItems) = preProject
-		httphelper.cs = httphelper.cs
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFrm-TestDemo", "WinFrm-TestDemo\WinFrm-TestDemo.csproj", "{EFEBCEA5-08F4-48DB-988D-D11C53E7BD6A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublicHttpHelper", "PublicHttpHelper", "{B6CA814B-F4E8-4EE5-BC57-81FFE087AD31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsharpHttpHelper_Demo", "CsharpHttpHelper_Demo\CsharpHttpHelper_Demo.csproj", "{F32BFE1F-4707-447A-BF42-DF82F710371F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsharpHttpHelper", "CsharpHttpHelper\CsharpHttpHelper.csproj", "{966C2F8B-47E5-4E6D-ABFC-13501E739D25}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -46,6 +47,30 @@ Global
 		{EFEBCEA5-08F4-48DB-988D-D11C53E7BD6A}.Release|x64.Build.0 = Release|x64
 		{EFEBCEA5-08F4-48DB-988D-D11C53E7BD6A}.Release|x86.ActiveCfg = Release|x86
 		{EFEBCEA5-08F4-48DB-988D-D11C53E7BD6A}.Release|x86.Build.0 = Release|x86
+		{F32BFE1F-4707-447A-BF42-DF82F710371F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F32BFE1F-4707-447A-BF42-DF82F710371F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F32BFE1F-4707-447A-BF42-DF82F710371F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F32BFE1F-4707-447A-BF42-DF82F710371F}.Debug|x64.Build.0 = Debug|Any CPU
+		{F32BFE1F-4707-447A-BF42-DF82F710371F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F32BFE1F-4707-447A-BF42-DF82F710371F}.Debug|x86.Build.0 = Debug|Any CPU
+		{F32BFE1F-4707-447A-BF42-DF82F710371F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F32BFE1F-4707-447A-BF42-DF82F710371F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F32BFE1F-4707-447A-BF42-DF82F710371F}.Release|x64.ActiveCfg = Release|Any CPU
+		{F32BFE1F-4707-447A-BF42-DF82F710371F}.Release|x64.Build.0 = Release|Any CPU
+		{F32BFE1F-4707-447A-BF42-DF82F710371F}.Release|x86.ActiveCfg = Release|Any CPU
+		{F32BFE1F-4707-447A-BF42-DF82F710371F}.Release|x86.Build.0 = Release|Any CPU
+		{966C2F8B-47E5-4E6D-ABFC-13501E739D25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{966C2F8B-47E5-4E6D-ABFC-13501E739D25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{966C2F8B-47E5-4E6D-ABFC-13501E739D25}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{966C2F8B-47E5-4E6D-ABFC-13501E739D25}.Debug|x64.Build.0 = Debug|Any CPU
+		{966C2F8B-47E5-4E6D-ABFC-13501E739D25}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{966C2F8B-47E5-4E6D-ABFC-13501E739D25}.Debug|x86.Build.0 = Debug|Any CPU
+		{966C2F8B-47E5-4E6D-ABFC-13501E739D25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{966C2F8B-47E5-4E6D-ABFC-13501E739D25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{966C2F8B-47E5-4E6D-ABFC-13501E739D25}.Release|x64.ActiveCfg = Release|Any CPU
+		{966C2F8B-47E5-4E6D-ABFC-13501E739D25}.Release|x64.Build.0 = Release|Any CPU
+		{966C2F8B-47E5-4E6D-ABFC-13501E739D25}.Release|x86.ActiveCfg = Release|Any CPU
+		{966C2F8B-47E5-4E6D-ABFC-13501E739D25}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
