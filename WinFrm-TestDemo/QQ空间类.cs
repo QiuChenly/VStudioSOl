@@ -8,6 +8,7 @@ using System.Diagnostics;
 using MSScriptControl;
 using System.IO;
 using System.Net;
+using System.Text.RegularExpressions;
 
 /// <summary>
 /// C#重写QQ空间登录操作
@@ -18,34 +19,73 @@ namespace QQClass
     class QQloginsub
     {
         public string pt_login_sign { get; set; }
-
+        public string cap_cd { get; set; }
+        public string ptvfsession { get; set; }
+        public string verifyCode { get; set; }
     }
     class QQ
     {
         private QQloginsub loginsub = new QQloginsub();
-        private string cook { get; set; }
+        private bool IsNeedCap;
         /// <summary>
         /// 初始化pt-login-sign值
         /// </summary>
-        public void init()
+        public bool init()
         {
             HttpHelper web = new HttpHelper();
             web.InitCookie();
             web.SetUserAgent("Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.22 Safari/537.36 SE 2.X MetaSr 1.0");
-            web.SetTimeOut( 10000);
+            web.SetTimeOut(10000);
             web.SetAccept("*/*");
             string str = web.HttpGet(@"https://xui.ptlogin2.qq.com/cgi-bin/xlogin?appid=522005705&daid=4&s_url=https://mail.qq.com/cgi-bin/login?vt=passport%26vm=wpt%26ft=loginpage%26target=&style=25&low_login=1");
-            CookieCollection cookie = web.getCookieCollection();
-            string a = cookie["pt_login_sig"].Value;
-
-
-
+            loginsub.pt_login_sign = web.getCookieValue("pt_login_sig");
+            if (loginsub.pt_login_sign == "" && loginsub.pt_login_sign == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
-        public bool CheckVerify(string uin)
+
+        /// <summary>
+        /// 检查是否需要验证码
+        /// </summary>
+        /// <param name="uin">QQ号</param>
+        /// <returns>返回1表示不需要，返回2表示出现异常，返回3表示需要</returns>
+        public int CheckVerify(string uin)
         {
-
-            return false;
+            string url = @"https://ssl.ptlogin2.qq.com/check?regmaster=&pt_tea=2&pt_vcode=0&uin="+uin+"&appid=522005705&js_ver=10193&js_type=1&login_sig="+loginsub.pt_login_sign+"&u1=https%3A%2F%2Fmail.qq.com%2Fcgi-bin%2Flogin%3Fvt%3Dpassport%26vm%3Dwpt%26ft%3Dloginpage%26target%3D&r=0.8285527726120261&pt_uistyle=25";
+            HttpHelper web = new HttpHelper();
+            web.SetAccept("*/*");
+            web.SetUserAgent("Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.22 Safari/537.36 SE 2.X MetaSr 1.0");
+            string str=web.HttpGet(url);
+            Regex regular = new Regex(@"checkVC\('(.*?)','(.*?)','(.*?)','(.*?)','(.*?)'\)", RegexOptions.None);
+            Match match = regular.Match(str);
+            if (match.Success)
+            {
+                if (match.Groups[2].Value.Contains("!")==true)
+                {
+                    loginsub.verifyCode = match.Groups[2].Value;
+                    loginsub.cap_cd = match.Groups[4].Value;
+                    IsNeedCap = false;
+                    return 1;
+                }
+                else
+                {
+                    loginsub.verifyCode = "";
+                    loginsub.cap_cd = match.Groups[2].Value;
+                    IsNeedCap = true;
+                    return 3;
+                }
+            }
+            else
+            {
+                return 2;
+            }
         }
+
         #region //取出中间文本
         /// <summary>
         /// 取出中间文本

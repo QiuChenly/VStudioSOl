@@ -122,6 +122,7 @@
             this.Controls.Add(this.btnlogin);
             this.Name = "FrmMain";
             this.Text = "QQ腾讯网登录";
+            this.Load += new System.EventHandler(this.FrmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
