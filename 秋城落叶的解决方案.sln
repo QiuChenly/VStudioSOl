@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26127.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF-TestDemo", "WPF-TestDemo\WPF-TestDemo.csproj", "{FA03B9AF-E810-474B-BD98-FA11753BA42B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QQ登录", "WinFrm-TestDemo\QQ登录.csproj", "{EFEBCEA5-08F4-48DB-988D-D11C53E7BD6A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QQ邮箱登录", "WinFrm-TestDemo\QQ邮箱登录.csproj", "{EFEBCEA5-08F4-48DB-988D-D11C53E7BD6A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "秋城落叶常用程序集", "秋城落叶常用程序集\秋城落叶常用程序集.csproj", "{D7990BBD-B045-4E66-9AC4-157B99448F3C}"
 EndProject

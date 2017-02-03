@@ -41,13 +41,13 @@
             // 
             // btnlogin
             // 
-            this.btnlogin.Location = new System.Drawing.Point(145, 164);
+            this.btnlogin.Location = new System.Drawing.Point(139, 162);
             this.btnlogin.Name = "btnlogin";
             this.btnlogin.Size = new System.Drawing.Size(75, 23);
             this.btnlogin.TabIndex = 0;
             this.btnlogin.Text = "登录";
             this.btnlogin.UseVisualStyleBackColor = true;
-            this.btnlogin.Click += new System.EventHandler(this.btnMe_Click);
+            this.btnlogin.Click += new System.EventHandler(this.btnlogin_Click);
             // 
             // label1
             // 
@@ -73,7 +73,6 @@
             this.txtuser.Name = "txtuser";
             this.txtuser.Size = new System.Drawing.Size(291, 21);
             this.txtuser.TabIndex = 3;
-            this.txtuser.Leave += new System.EventHandler(this.btnMe_Click);
             // 
             // txtpwd
             // 
@@ -121,7 +120,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnlogin);
             this.Name = "FrmMain";
-            this.Text = "QQ腾讯网登录";
+            this.Text = "QQ邮箱登录";
             this.Load += new System.EventHandler(this.FrmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pic_verify)).EndInit();
             this.ResumeLayout(false);

@@ -26,24 +26,49 @@ namespace WinFrm_TestDemo
             int state = qq.CheckVerify(txtuser.Text.Trim());
             if (state == 3)
             {
+                this.Text = "检测到需要验证码。";
                 pic_verify.Image = qq.getCapture();
             }
             else if (state == 2)
             {
                 MessageBox.Show("获取验证码出现错误！请重新打开本程序！");
             }
+            else if (state ==1)
+            {
+                this.Text = "检测到不需要验证码。";
+            }
         }
 
-        private void btnMe_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
+            //初始化一些登录参数
             if (!qq.init())
             {
                 MessageBox.Show("初始化失败！", "2333");
+            }
+        }
+
+        private void btnlogin_Click(object sender, EventArgs e)
+        {
+            int state=qq.loginQQ(txtpwd.Text.Trim(), txtVerify.Text.Trim(), out string nick);
+            switch (state)
+            {
+                case 1:
+                    MessageBox.Show("登录成功！欢迎你：" + nick, "恭喜！");
+                    break;
+                case 2:
+                    MessageBox.Show("账号或密码错误！", "提示：");
+                    txtuser_Leave(null,null);
+                    break;
+                case 3:
+                    MessageBox.Show("验证码错误！", "提示：");
+                    pic_verify.Image = qq.getCapture();
+                    break;
+                default:
+                    MessageBox.Show("出现致命错误！导致无法正常访问！", "提示：");
+                    break;
             }
         }
     }
