@@ -476,8 +476,17 @@ public class HttpHelper
 
         return cc;
     }
-
+    /// <summary>
+    /// 2017.02.03 秋城落叶修正 支持获取已存在的所有cookie集合
+    /// </summary>
+    /// <returns>返回cookie集合</returns>
     public CookieCollection getCookieCollection() { return _cookiecollection; }
+    /// <summary>
+    /// 2017.02.03 秋城落叶修正 获取指定cookie的值，如果没有则返回空
+    /// </summary>
+    /// <param name="cookiename"></param>
+    /// <returns></returns>
+    public string getCookieValue(string cookiename) { return _cookiecollection[cookiename].Value; }
     public void DebugCookies()
     {
         Trace.WriteLine("**********************BEGIN COOKIES*************************");
