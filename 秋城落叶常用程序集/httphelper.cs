@@ -38,7 +38,7 @@ public class qiuchenhelper
         ScriptControl script = new ScriptControl();
         script.Language = "JavaScript";
         script.AddCode(Code);
-        return script.Eval(EvalStr);
+        return script.Eval(EvalStr).ToString();
     }
     #endregion
 }

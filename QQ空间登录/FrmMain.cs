@@ -20,7 +20,7 @@ namespace QQ空间登录
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            txtuser.Leave += Txtuser_Leave;
+            txtuser.Leave += Txtuser_Leave;//委托事件 失去焦点
         }
 
         private void Txtuser_Leave(object sender, EventArgs e)
@@ -44,6 +44,7 @@ namespace QQ空间登录
                     break;
                 case 1:
                     MessageBox.Show("登录成功！" + nick);
+                    qq.initlogin();
                     break;
                 case 2:
                     MessageBox.Show("账号或密码错误！" + nick);
