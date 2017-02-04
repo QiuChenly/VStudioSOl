@@ -25,6 +25,7 @@ public class qiuchenhelper
         return alltext.Substring(index, alltext.IndexOf(righttext, index) - index);
     }
     #endregion
+
     #region //JavaScriptEval计算
     /// <summary>
     /// JS计算
@@ -45,7 +46,6 @@ public class qiuchenhelper
         return stri;
     }
     #endregion
-
 }
 /// <summary>
 /// Http操作类.
@@ -68,6 +68,8 @@ public class HttpHelper
     private String _accept = "text/html, application/xhtml+xml, application/xml, */*";
     //超时时间
     private int _timeout = 30 * 1000;
+    //禁止重定向问题
+    private bool _redirect = true;
     //类型
     private string _contenttype = "application/x-www-form-urlencoded";
     //cookies
@@ -138,6 +140,10 @@ public class HttpHelper
     public void SetAccept(String accept)
     {
         _accept = accept;
+    }
+    public void SetReDirectState(bool ReDirect)
+    {
+        _redirect = ReDirect;
     }
 
     /// <summary>
@@ -228,7 +234,7 @@ public class HttpHelper
             request.Method = "GET";
             request.Referer = refer;
             request.KeepAlive = true;
-            request.AllowAutoRedirect = true;
+            request.AllowAutoRedirect = _redirect;
             request.UnsafeAuthenticatedConnectionSharing = true;
             request.CookieContainer = new CookieContainer();
             //据说能提高性能
@@ -366,7 +372,7 @@ public class HttpHelper
             request.Method = "GET";
             request.Referer = url;
             request.KeepAlive = true;
-            request.AllowAutoRedirect = true;
+            request.AllowAutoRedirect = _redirect;
             request.UnsafeAuthenticatedConnectionSharing = true;
             request.CookieContainer = new CookieContainer();
             //据说能提高性能
@@ -454,9 +460,9 @@ public class HttpHelper
             request.Accept = _accept;
             request.Method = "POST";
             request.KeepAlive = true;
-            request.AllowAutoRedirect = true;
+            request.AllowAutoRedirect = _redirect;
             request.CookieContainer = new CookieContainer();
-            //据说能提高性能
+            //据说能提高性能 嗯 预设代理为空 让系统不去检查代理 提高访问速度
             request.Proxy = null;
 
             if (_cookiecollection != null)
@@ -510,7 +516,6 @@ public class HttpHelper
         {
             sb.Append(@"%" + Convert.ToString(byStr[i], 16));
         }
-
         return (sb.ToString());
     }
 

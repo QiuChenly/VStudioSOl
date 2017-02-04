@@ -147,7 +147,6 @@ namespace QQClass
             }
             else if (match.Groups[1].Value == "0")
             {
-                //"ptuiCB('0','0','https://ssl.ptlogin2.mail.qq.com/check_sig?','1','登录成功！', '吃太多牙对糖不好');\r\n"
                 Nick = match.Groups[5].Value.Replace("登录成功！', '", "");
                 loginsub.NextJmpUrl = match.Groups[3].Value;
                 return 1;
