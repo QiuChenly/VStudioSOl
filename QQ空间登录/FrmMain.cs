@@ -12,6 +12,7 @@ namespace QQ空间登录
 {
     public partial class FrmMain : Form
     {
+        QQ空间 qq = new QQ空间();
         public FrmMain()
         {
             InitializeComponent();
@@ -19,7 +20,7 @@ namespace QQ空间登录
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            qq.init();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
