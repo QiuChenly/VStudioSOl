@@ -41,7 +41,7 @@
             // 
             // btnlogin
             // 
-            this.btnlogin.Location = new System.Drawing.Point(148, 243);
+            this.btnlogin.Location = new System.Drawing.Point(86, 184);
             this.btnlogin.Name = "btnlogin";
             this.btnlogin.Size = new System.Drawing.Size(75, 23);
             this.btnlogin.TabIndex = 0;
@@ -52,7 +52,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(95, 91);
+            this.label1.Location = new System.Drawing.Point(33, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(29, 12);
             this.label1.TabIndex = 1;
@@ -61,7 +61,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(95, 125);
+            this.label2.Location = new System.Drawing.Point(33, 66);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 12);
             this.label2.TabIndex = 2;
@@ -70,7 +70,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(95, 160);
+            this.label3.Location = new System.Drawing.Point(33, 101);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 12);
             this.label3.TabIndex = 3;
@@ -78,14 +78,14 @@
             // 
             // txtuser
             // 
-            this.txtuser.Location = new System.Drawing.Point(148, 88);
+            this.txtuser.Location = new System.Drawing.Point(86, 29);
             this.txtuser.Name = "txtuser";
             this.txtuser.Size = new System.Drawing.Size(100, 21);
             this.txtuser.TabIndex = 4;
             // 
             // txtpwd
             // 
-            this.txtpwd.Location = new System.Drawing.Point(148, 122);
+            this.txtpwd.Location = new System.Drawing.Point(86, 63);
             this.txtpwd.Name = "txtpwd";
             this.txtpwd.PasswordChar = '*';
             this.txtpwd.Size = new System.Drawing.Size(100, 21);
@@ -93,14 +93,14 @@
             // 
             // txtverify
             // 
-            this.txtverify.Location = new System.Drawing.Point(148, 197);
+            this.txtverify.Location = new System.Drawing.Point(86, 138);
             this.txtverify.Name = "txtverify";
             this.txtverify.Size = new System.Drawing.Size(100, 21);
             this.txtverify.TabIndex = 6;
             // 
             // picverify
             // 
-            this.picverify.Location = new System.Drawing.Point(148, 149);
+            this.picverify.Location = new System.Drawing.Point(86, 90);
             this.picverify.Name = "picverify";
             this.picverify.Size = new System.Drawing.Size(100, 42);
             this.picverify.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -111,7 +111,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(380, 380);
+            this.ClientSize = new System.Drawing.Size(257, 242);
             this.Controls.Add(this.picverify);
             this.Controls.Add(this.txtverify);
             this.Controls.Add(this.txtpwd);
