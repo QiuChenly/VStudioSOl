@@ -20,7 +20,12 @@ namespace QQ空间登录
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            qq.init();
+            txtuser.Leave += Txtuser_Leave;
+        }
+
+        private void Txtuser_Leave(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
