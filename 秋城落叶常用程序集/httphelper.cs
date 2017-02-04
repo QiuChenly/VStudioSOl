@@ -33,17 +33,12 @@ public class qiuchenhelper
     /// <param name="CurrentDir">js文件地址</param>
     /// <param name="EvalStr">计算公式 例如 "getpwd('pwd')"</param>
     /// <returns>返回加密结果</returns>
-    public string JavaScriptEval(string CurrentDir, string EvalStr)
+    public string JavaScriptEval(string Code, string EvalStr)
     {
         ScriptControl script = new ScriptControl();
-        StreamReader str = new StreamReader(CurrentDir, Encoding.Unicode);
-        string stri = str.ReadToEnd();
-        str.Close();
-        str.Dispose();
         script.Language = "JavaScript";
-        script.AddCode(stri);
-        stri = script.Eval(EvalStr);
-        return stri;
+        script.AddCode(Code);
+        return script.Eval(EvalStr);
     }
     #endregion
 }

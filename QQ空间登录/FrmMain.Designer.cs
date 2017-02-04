@@ -34,9 +34,9 @@
             this.txtuser = new System.Windows.Forms.TextBox();
             this.txtpwd = new System.Windows.Forms.TextBox();
             this.txtverify = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.verifyPic = new System.Windows.Forms.PictureBox();
             this.btnLogin = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.verifyPic)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -88,14 +88,15 @@
             this.txtverify.Size = new System.Drawing.Size(138, 21);
             this.txtverify.TabIndex = 5;
             // 
-            // pictureBox1
+            // verifyPic
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(60, 62);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(130, 53);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
+            this.verifyPic.Location = new System.Drawing.Point(60, 62);
+            this.verifyPic.Name = "verifyPic";
+            this.verifyPic.Size = new System.Drawing.Size(130, 53);
+            this.verifyPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.verifyPic.TabIndex = 6;
+            this.verifyPic.TabStop = false;
+            this.verifyPic.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // btnLogin
             // 
@@ -111,9 +112,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(500, 200);
+            this.ClientSize = new System.Drawing.Size(693, 200);
             this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.verifyPic);
             this.Controls.Add(this.txtverify);
             this.Controls.Add(this.txtpwd);
             this.Controls.Add(this.txtuser);
@@ -123,7 +124,7 @@
             this.Name = "FrmMain";
             this.Text = "QQ空间登录";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.verifyPic)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -137,7 +138,7 @@
         private System.Windows.Forms.TextBox txtuser;
         private System.Windows.Forms.TextBox txtpwd;
         private System.Windows.Forms.TextBox txtverify;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox verifyPic;
         private System.Windows.Forms.Button btnLogin;
     }
 }
