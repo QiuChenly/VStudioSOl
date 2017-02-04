@@ -14,7 +14,6 @@ namespace 百度登录
     public partial class FrmMain : Form
     {
         百度登录类 baidu = new 百度登录类();
-
         public FrmMain()
         {
             InitializeComponent();
@@ -22,7 +21,17 @@ namespace 百度登录
 
         private void btnlogin_Click(object sender, EventArgs e)
         {
-            baidu.loginbaidu(txtpwd.Text.Trim());
+            switch (baidu.loginbaidu(txtpwd.Text.Trim(), out string nick))
+            {
+                case 1:
+                    MessageBox.Show("登录百度账号成功!账号:" + nick);
+                    break;
+                case 2:
+                    MessageBox.Show("登录百度账号失败!");
+                    break;
+                default:
+                    break;
+            }
         }
 
         private void FrmMain_Load(object sender, EventArgs e)
