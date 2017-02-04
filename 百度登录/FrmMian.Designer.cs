@@ -103,6 +103,7 @@
             this.picverify.Location = new System.Drawing.Point(148, 149);
             this.picverify.Name = "picverify";
             this.picverify.Size = new System.Drawing.Size(100, 42);
+            this.picverify.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picverify.TabIndex = 8;
             this.picverify.TabStop = false;
             // 

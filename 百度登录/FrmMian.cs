@@ -22,18 +22,25 @@ namespace 百度登录
 
         private void btnlogin_Click(object sender, EventArgs e)
         {
-
+            baidu.loginbaidu(txtpwd.Text.Trim());
         }
 
         private void FrmMain_Load(object sender, EventArgs e)
         {
             txtuser.Leave += Txtuser_Leave;
+            txtverify.Leave += Txtverify_Leave;
             baidu.init();
         }
 
         private void Txtuser_Leave(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            baidu.checkverify(txtuser.Text);
+            baidu.getpubkey();
+            picverify.Image = baidu.getverifyPic();
+        }
+        private void Txtverify_Leave(object sender, EventArgs e)
+        {
+            baidu.checkverifyState(txtverify.Text);
         }
     }
 }

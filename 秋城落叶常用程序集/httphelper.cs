@@ -21,8 +21,16 @@ public class qiuchenhelper
     public string BetweenText
         (string alltext, string lefttext, string righttext)
     {
-        int index = alltext.IndexOf(lefttext, 0) + lefttext.Length;
-        return alltext.Substring(index, alltext.IndexOf(righttext, index) - index);
+        if (!string.IsNullOrWhiteSpace(alltext))
+        {
+            int index = alltext.IndexOf(lefttext, 0) + lefttext.Length;
+            return alltext.Substring(index, alltext.IndexOf(righttext, index) - index);
+
+        }
+        else
+        {
+            return string.Empty;
+        }
     }
     #endregion
 
@@ -267,9 +275,8 @@ public class HttpHelper
             html = GetStringFromResponse(response);
             if (request.CookieContainer != null)
             {
-                response.Cookies = request.CookieContainer.GetCookies(request.RequestUri);
+                response.Cookies=request.CookieContainer.GetCookies(request.RequestUri);
             }
-
             if (response.Cookies != null)
             {
                 _cookiecollection = response.Cookies;
@@ -542,7 +549,8 @@ public class HttpHelper
             string[] cookiesarray_2 = cookiesarray[i].Split(",".ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
             for (int j = 0; j < cookiesarray_2.Length; j++)
             {
-                string[] cookiesarray_3 = cookiesarray_2[j].Trim().Split("=".ToCharArray());
+                //2017.02.04 秋城落叶修正 百度Cookie误删除的问题
+                string[] cookiesarray_3 = cookiesarray_2[j].Trim().Split("=".ToCharArray(),2);
                 if (cookiesarray_3.Length == 2)
                 {
                     string cname = cookiesarray_3[0].Trim();
