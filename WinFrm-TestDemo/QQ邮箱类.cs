@@ -32,6 +32,7 @@ namespace QQClass
     }
     class QQ
     {
+        private qiuchenhelper luoye = new qiuchenhelper();
         private QQloginsub loginsub = new QQloginsub();
         private bool IsNeedCap;
         #region 初始化pt_login-sign
@@ -113,38 +114,6 @@ namespace QQClass
         }
         #endregion
 
-        #region 取出中间文本
-        /// <summary>
-        /// 取出中间文本
-        /// </summary>
-        /// <param name="alltext">全部文本</param>
-        /// <param name="lefttext"></param>
-        /// <param name="righttext"></param>
-        /// <returns>返回取到的文本</returns>
-        public string BetweenText
-            (string alltext, string lefttext, string righttext)
-        {
-            int index = alltext.IndexOf(lefttext, 0) + lefttext.Length;
-            return alltext.Substring(index, alltext.IndexOf(righttext, index) - index);
-        }
-        #endregion
-
-        #region JavaScriptEval计算
-        /// <summary>
-        /// JS计算
-        /// </summary>
-        /// <param name="CurrentDir">js文件地址</param>
-        /// <param name="EvalStr">计算公式 例如 "getpwd('pwd')"</param>
-        /// <returns>返回加密结果</returns>
-        public string JavaScriptEval(string Code, string EvalStr)
-        {
-            ScriptControl script = new ScriptControl();
-            script.Language = "JavaScript";
-            script.AddCode(Code);
-            return script.Eval(EvalStr);
-        }
-        #endregion
-
         #region 登录QQ邮箱
         /// <summary>
         /// 登录QQ邮箱，返回1成功 返回2账号或密码错误，返回3验证码错误 返回4 失败
@@ -159,7 +128,7 @@ namespace QQClass
             {
                 verifyCode = loginsub.verifyCode;
             }
-            pwd = JavaScriptEval(StringStr.rsa, "getpwd('" + pwd + "','" + loginsub.uin + "','" + verifyCode + "')");
+            pwd = luoye.JavaScriptEval(StringStr.rsa, "getpwd('" + pwd + "','" + loginsub.uin + "','" + verifyCode + "')");
             string url = @"https://ssl.ptlogin2.qq.com/login?u=" + loginsub.uin + "&verifycode=" + verifyCode + "&pt_vcode_v1=0&pt_verifysession_v1=" + loginsub.ptvfsession_pt_verifysession_v1 + "&p=" + pwd + "&pt_randsalt=2&u1=https%3A%2F%2Fmail.qq.com%2Fcgi-bin%2Flogin%3Fvt%3Dpassport%26vm%3Dwpt%26ft%3Dloginpage%26target%3D%26account%3D" + loginsub.uin + "&ptredirect=1&h=1&t=1&g=1&from_ui=1&ptlang=2052&action=8-26-1486126339070&js_ver=10193&js_type=1&login_sig=" + loginsub.pt_login_sign + "&pt_uistyle=25&aid=522005705&daid=4&";
             HttpHelper web = new HttpHelper();
             web.SetUserAgent("Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/49.0.2623.22 Safari/537.36 SE 2.X MetaSr 1.0");
