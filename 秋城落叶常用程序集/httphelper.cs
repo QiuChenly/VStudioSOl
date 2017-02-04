@@ -41,6 +41,20 @@ public class qiuchenhelper
         return script.Eval(EvalStr).ToString();
     }
     #endregion
+    
+    #region URL解码
+    public string UrlDeCode(string str)
+    {
+        return JavaScriptEval("function encode(str){return decodeURIComponent(str)}", "encode('"+str+"')");
+    }
+    #endregion
+
+    #region URL编码
+    public string UrlEnCode(string str)
+    {
+        return JavaScriptEval("function encode(str){return encodeURIComponent(str)}", "encode('" + str + "')");
+    }
+    #endregion
 }
 /// <summary>
 /// Http操作类.
