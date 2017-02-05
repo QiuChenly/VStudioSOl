@@ -234,9 +234,9 @@ public class HttpHelper
     /// </summary>
     /// <param name="url"></param>
     /// <returns></returns>
-    public String HttpGet(String url)
+    public String HttpGet(String url, bool IsRedirct = false)
     {
-        return HttpGet(url, url);
+        return HttpGet(url, url,IsRedirct);
     }
 
 
@@ -246,7 +246,7 @@ public class HttpHelper
     /// <param name="url"></param>
     /// <param name="refer"></param>
     /// <returns></returns>
-    public String HttpGet(String url, String refer)
+    public String HttpGet(String url, String refer,bool IsRedirct=false)
     {
         String html;
         try
@@ -282,6 +282,7 @@ public class HttpHelper
 
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             html = GetStringFromResponse(response);
+            
             if (request.CookieContainer != null)
             {
                 response.Cookies = request.CookieContainer.GetCookies(request.RequestUri);
@@ -295,7 +296,11 @@ public class HttpHelper
                 string tmpcookie = response.Headers["Set-Cookie"];
                 _cookiecollection.Add(ConvertCookieString(tmpcookie));
             }
-
+            //2017.02.05 秋城落叶修正302Moved重定向Uri地址获取的问题
+            if (IsRedirct)
+            {
+                html = response.ResponseUri.ToString();
+            }
             response.Close();
             return html;
         }

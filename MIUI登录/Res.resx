@@ -1,0 +1,441 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="MD5" xml:space="preserve">
+    <value>//SB MIUI  放着RSA不用
+var CryptoJS = CryptoJS || function(f, e) {
+        var z = {}, A = z.lib = {}, q = function() {}, v = A.Base = {
+            extend: function(F) {
+                q.prototype = this;
+                var b = new q;
+                F &amp;&amp; b.mixIn(F);
+                b.hasOwnProperty("init") || (b.init = function() {
+                    b.$super.init.apply(this, arguments)
+                });
+                b.init.prototype = b;
+                b.$super = this;
+                return b
+            },
+            create: function() {
+                var F = this.extend();
+                F.init.apply(F, arguments);
+                return F
+            },
+            init: function() {},
+            mixIn: function(F) {
+                for (var b in F) F.hasOwnProperty(b) &amp;&amp; (this[b] = F[b]);
+                F.hasOwnProperty("toString") &amp;&amp; (this.toString = F.toString)
+            },
+            clone: function() {
+                return this.init.prototype.extend(this)
+            }
+        },
+        x = A.WordArray = v.extend({
+            init: function(b, f) {
+                b = this.words = b || [];
+                this.sigBytes = f != e ? f : 4 * b.length
+            },
+            toString: function(b) {
+                return (b || k).stringify(this)
+            },
+            concat: function(b) {
+                var f = this.words,
+                    g = b.words,
+                    e = this.sigBytes;
+                b = b.sigBytes;
+                this.clamp();
+                if (e % 4) for (var u = 0; u &lt; b; u++) f[e + u &gt;&gt;&gt; 2] |= (g[u &gt;&gt;&gt; 2] &gt;&gt;&gt; 24 - u % 4 * 8 &amp; 255) &lt;&lt; 24 - (e + u) % 4 * 8;
+                else if (65535 &lt; g.length) for (u = 0; u &lt; b; u += 4) f[e + u &gt;&gt;&gt; 2] = g[u &gt;&gt;&gt; 2];
+                else f.push.apply(f, g);
+                this.sigBytes += b;
+                return this
+            },
+            clamp: function() {
+                var b = this.words,
+                    g = this.sigBytes;
+                b[g &gt;&gt;&gt; 2] &amp;= 4294967295 &lt;&lt; 32 - g % 4 * 8;
+                b.length = f.ceil(g / 4)
+            },
+            clone: function() {
+                var b = v.clone.call(this);
+                b.words = this.words.slice(0);
+                return b
+            },
+            random: function(b) {
+                for (var g = [], e = 0; e &lt; b; e += 4) g.push(4294967296 * f.random() | 0);
+                return new x.init(g, b)
+            }
+        }),
+            H = z.enc = {}, k = H.Hex = {
+                stringify: function(b) {
+                    var f = b.words;
+                    b = b.sigBytes;
+                    for (var g = [], e = 0; e &lt; b; e++) {
+                        var u = f[e &gt;&gt;&gt; 2] &gt;&gt;&gt; 24 - e % 4 * 8 &amp; 255;
+                        g.push((u &gt;&gt;&gt; 4).toString(16));
+                        g.push((u &amp; 15).toString(16))
+                    }
+                    return g.join("")
+                },
+                parse: function(b) {
+                    for (var g = b.length, f = [], e = 0; e &lt; g; e += 2) f[e &gt;&gt;&gt; 3] |= parseInt(b.substr(e, 2), 16) &lt;&lt; 24 - e % 8 * 4;
+                    return new x.init(f, g / 2)
+                }
+            }, g = H.Latin1 = {
+                stringify: function(b) {
+                    var g = b.words;
+                    b = b.sigBytes;
+                    for (var f = [], e = 0; e &lt; b; e++) f.push(String.fromCharCode(g[e &gt;&gt;&gt; 2] &gt;&gt;&gt; 24 - e % 4 * 8 &amp; 255));
+                    return f.join("")
+                },
+                parse: function(b) {
+                    for (var f = b.length, g = [], e = 0; e &lt; f; e++) g[e &gt;&gt;&gt; 2] |= (b.charCodeAt(e) &amp; 255) &lt;&lt; 24 - e % 4 * 8;
+                    return new x.init(g, f)
+                }
+            }, I = H.Utf8 = {
+                stringify: function(b) {
+                    try {
+                        return decodeURIComponent(escape(g.stringify(b)))
+                    } catch (e) {
+                        throw Error("Malformed UTF-8 data");
+                    }
+                },
+                parse: function(b) {
+                    return g.parse(unescape(encodeURIComponent(b)))
+                }
+            },
+            u = A.BufferedBlockAlgorithm = v.extend({
+                reset: function() {
+                    this._data = new x.init;
+                    this._nDataBytes = 0
+                },
+                _append: function(b) {
+                    "string" == typeof b &amp;&amp; (b = I.parse(b));
+                    this._data.concat(b);
+                    this._nDataBytes += b.sigBytes
+                },
+                _process: function(b) {
+                    var e = this._data,
+                        g = e.words,
+                        u = e.sigBytes,
+                        t = this.blockSize,
+                        k = u / (4 * t),
+                        k = b ? f.ceil(k) : f.max((k | 0) - this._minBufferSize, 0);
+                    b = k * t;
+                    u = f.min(4 * b, u);
+                    if (b) {
+                        for (var q = 0; q &lt; b; q += t) this._doProcessBlock(g, q);
+                        q = g.splice(0, b);
+                        e.sigBytes -= u
+                    }
+                    return new x.init(q, u)
+                },
+                clone: function() {
+                    var b = v.clone.call(this);
+                    b._data = this._data.clone();
+                    return b
+                },
+                _minBufferSize: 0
+            });
+        A.Hasher = u.extend({
+            cfg: v.extend(),
+            init: function(b) {
+                this.cfg = this.cfg.extend(b);
+                this.reset()
+            },
+            reset: function() {
+                u.reset.call(this);
+                this._doReset()
+            },
+            update: function(b) {
+                this._append(b);
+                this._process();
+                return this
+            },
+            finalize: function(b) {
+                b &amp;&amp; this._append(b);
+                return this._doFinalize()
+            },
+            blockSize: 16,
+            _createHelper: function(b) {
+                return function(e, g) {
+                    return (new b.init(g)).finalize(e)
+                }
+            },
+            _createHmacHelper: function(e) {
+                return function(g, f) {
+                    return (new b.HMAC.init(e,
+                    f)).finalize(g)
+                }
+            }
+        });
+        var b = z.algo = {};
+        return z
+    }(Math);
+(function(f) {
+    function e(e, b, g, f, k, q, t) {
+        e = e + (b &amp; g | ~b &amp; f) + k + t;
+        return (e &lt;&lt; q | e &gt;&gt;&gt; 32 - q) + b
+    }
+    function z(e, b, g, f, q, k, t) {
+        e = e + (b &amp; f | g &amp; ~f) + q + t;
+        return (e &lt;&lt; k | e &gt;&gt;&gt; 32 - k) + b
+    }
+    function A(e, b, g, f, k, q, t) {
+        e = e + (b ^ g ^ f) + k + t;
+        return (e &lt;&lt; q | e &gt;&gt;&gt; 32 - q) + b
+    }
+    function q(e, b, g, f, q, k, t) {
+        e = e + (g ^ (b | ~f)) + q + t;
+        return (e &lt;&lt; k | e &gt;&gt;&gt; 32 - k) + b
+    }
+    for (var v = CryptoJS, x = v.lib, H = x.WordArray, k = x.Hasher, x = v.algo, g = [], I = 0; 64 &gt; I; I++) g[I] = 4294967296 * f.abs(f.sin(I + 1)) | 0;
+    x = x.MD5 = k.extend({
+        _doReset: function() {
+            this._hash = new H.init([1732584193, 4023233417, 2562383102, 271733878])
+        },
+        _doProcessBlock: function(f, b) {
+            for (var k = 0; 16 &gt; k; k++) {
+                var v = b + k,
+                    C = f[v];
+                f[v] = (C &lt;&lt; 8 | C &gt;&gt;&gt; 24) &amp; 16711935 | (C &lt;&lt; 24 | C &gt;&gt;&gt; 8) &amp; 4278255360
+            }
+            var k = this._hash.words,
+                v = f[b + 0],
+                C = f[b + 1],
+                B = f[b + 2],
+                t = f[b + 3],
+                x = f[b + 4],
+                D = f[b + 5],
+                H = f[b + 6],
+                I = f[b + 7],
+                w = f[b + 8],
+                P = f[b + 9],
+                X = f[b + 10],
+                T = f[b + 11],
+                O = f[b + 12],
+                U = f[b + 13],
+                Q = f[b + 14],
+                V = f[b + 15],
+                n = k[0],
+                m = k[1],
+                l = k[2],
+                p = k[3],
+                n = e(n, m, l, p, v, 7, g[0]),
+                p = e(p, n, m, l, C, 12, g[1]),
+                l = e(l, p, n, m, B, 17, g[2]),
+                m = e(m, l, p, n, t, 22, g[3]),
+                n = e(n, m, l, p, x, 7, g[4]),
+                p = e(p, n, m, l, D, 12, g[5]),
+                l = e(l, p, n, m, H, 17, g[6]),
+                m = e(m, l, p, n, I, 22, g[7]),
+                n = e(n, m, l, p, w, 7, g[8]),
+                p = e(p, n, m, l, P, 12, g[9]),
+                l = e(l, p, n, m, X, 17, g[10]),
+                m = e(m, l, p, n, T, 22, g[11]),
+                n = e(n, m, l, p, O, 7, g[12]),
+                p = e(p, n, m, l, U, 12, g[13]),
+                l = e(l, p, n, m, Q, 17, g[14]),
+                m = e(m, l, p, n, V, 22, g[15]),
+                n = z(n, m, l, p, C, 5, g[16]),
+                p = z(p, n, m, l, H, 9, g[17]),
+                l = z(l, p, n, m, T, 14, g[18]),
+                m = z(m, l, p, n, v, 20, g[19]),
+                n = z(n, m, l, p, D, 5, g[20]),
+                p = z(p, n, m, l, X, 9, g[21]),
+                l = z(l, p, n, m, V, 14, g[22]),
+                m = z(m, l, p, n, x, 20, g[23]),
+                n = z(n, m, l, p, P, 5, g[24]),
+                p = z(p, n, m, l, Q, 9, g[25]),
+                l = z(l, p, n, m, t, 14, g[26]),
+                m = z(m, l, p, n, w, 20, g[27]),
+                n = z(n, m, l, p, U, 5, g[28]),
+                p = z(p, n,
+                m, l, B, 9, g[29]),
+                l = z(l, p, n, m, I, 14, g[30]),
+                m = z(m, l, p, n, O, 20, g[31]),
+                n = A(n, m, l, p, D, 4, g[32]),
+                p = A(p, n, m, l, w, 11, g[33]),
+                l = A(l, p, n, m, T, 16, g[34]),
+                m = A(m, l, p, n, Q, 23, g[35]),
+                n = A(n, m, l, p, C, 4, g[36]),
+                p = A(p, n, m, l, x, 11, g[37]),
+                l = A(l, p, n, m, I, 16, g[38]),
+                m = A(m, l, p, n, X, 23, g[39]),
+                n = A(n, m, l, p, U, 4, g[40]),
+                p = A(p, n, m, l, v, 11, g[41]),
+                l = A(l, p, n, m, t, 16, g[42]),
+                m = A(m, l, p, n, H, 23, g[43]),
+                n = A(n, m, l, p, P, 4, g[44]),
+                p = A(p, n, m, l, O, 11, g[45]),
+                l = A(l, p, n, m, V, 16, g[46]),
+                m = A(m, l, p, n, B, 23, g[47]),
+                n = q(n, m, l, p, v, 6, g[48]),
+                p = q(p, n, m, l, I, 10, g[49]),
+                l = q(l, p, n, m,
+                Q, 15, g[50]),
+                m = q(m, l, p, n, D, 21, g[51]),
+                n = q(n, m, l, p, O, 6, g[52]),
+                p = q(p, n, m, l, t, 10, g[53]),
+                l = q(l, p, n, m, X, 15, g[54]),
+                m = q(m, l, p, n, C, 21, g[55]),
+                n = q(n, m, l, p, w, 6, g[56]),
+                p = q(p, n, m, l, V, 10, g[57]),
+                l = q(l, p, n, m, H, 15, g[58]),
+                m = q(m, l, p, n, U, 21, g[59]),
+                n = q(n, m, l, p, x, 6, g[60]),
+                p = q(p, n, m, l, T, 10, g[61]),
+                l = q(l, p, n, m, B, 15, g[62]),
+                m = q(m, l, p, n, P, 21, g[63]);
+            k[0] = k[0] + n | 0;
+            k[1] = k[1] + m | 0;
+            k[2] = k[2] + l | 0;
+            k[3] = k[3] + p | 0
+        },
+        _doFinalize: function() {
+            var e = this._data,
+                b = e.words,
+                g = 8 * this._nDataBytes,
+                k = 8 * e.sigBytes;
+            b[k &gt;&gt;&gt; 5] |= 128 &lt;&lt; 24 - k % 32;
+            var q = f.floor(g / 4294967296);
+            b[(k + 64 &gt;&gt;&gt; 9 &lt;&lt; 4) + 15] = (q &lt;&lt; 8 | q &gt;&gt;&gt; 24) &amp; 16711935 | (q &lt;&lt; 24 | q &gt;&gt;&gt; 8) &amp; 4278255360;
+            b[(k + 64 &gt;&gt;&gt; 9 &lt;&lt; 4) + 14] = (g &lt;&lt; 8 | g &gt;&gt;&gt; 24) &amp; 16711935 | (g &lt;&lt; 24 | g &gt;&gt;&gt; 8) &amp; 4278255360;
+            e.sigBytes = 4 * (b.length + 1);
+            this._process();
+            e = this._hash;
+            b = e.words;
+            for (g = 0; 4 &gt; g; g++) k = b[g], b[g] = (k &lt;&lt; 8 | k &gt;&gt;&gt; 24) &amp; 16711935 | (k &lt;&lt; 24 | k &gt;&gt;&gt; 8) &amp; 4278255360;
+            return e
+        },
+        clone: function() {
+            var e = k.clone.call(this);
+            e._hash = this._hash.clone();
+            return e
+        }
+    });
+    v.MD5 = k._createHelper(x);
+    v.HmacMD5 = k._createHmacHelper(x)
+})(Math);
+function getpwd(pwd)
+{
+return (CryptoJS.MD5(pwd).toString()+"").toUpperCase();
+}</value>
+  </data>
+</root>
