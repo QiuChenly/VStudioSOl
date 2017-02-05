@@ -27,7 +27,6 @@ namespace bilibili网站登录
 
         ///接口使用live.bilibili.comMINI登录接口 Cookie问题导致加密失效
         ///留待后续修复
-        ///验证码读取出现断流——>类库问题，即将修复BUG
         #region 初始化登录必须参数
         /// <summary>
         /// 初始化登录必须参数

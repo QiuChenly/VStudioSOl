@@ -63,6 +63,15 @@ public class qiuchenhelper
         return JavaScriptEval("function encode(str){return encodeURIComponent(str)}", "encode('" + str + "')");
     }
     #endregion
+
+    #region 取现行时间戳13位
+    public string getDataTime13()
+    {
+        return JavaScriptEval(@"function gettime() {
+    return (new Date).getTime()
+}", "gettime()");
+    }
+    #endregion
 }
 /// <summary>
 /// Http操作类.

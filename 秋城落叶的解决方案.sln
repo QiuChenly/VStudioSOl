@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "百度登录", "百度登�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "bilibili网站登录", "bilibili网站登录\bilibili网站登录.csproj", "{CCA9EED3-971D-4A8C-AE7B-FD6F0CED629F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sina微博的登录", "Sina微博的登录\Sina微博的登录.csproj", "{8862438D-C0D9-4F9B-A38E-281D7922B9E3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -97,6 +99,18 @@ Global
 		{CCA9EED3-971D-4A8C-AE7B-FD6F0CED629F}.Release|x64.Build.0 = Release|Any CPU
 		{CCA9EED3-971D-4A8C-AE7B-FD6F0CED629F}.Release|x86.ActiveCfg = Release|Any CPU
 		{CCA9EED3-971D-4A8C-AE7B-FD6F0CED629F}.Release|x86.Build.0 = Release|Any CPU
+		{8862438D-C0D9-4F9B-A38E-281D7922B9E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8862438D-C0D9-4F9B-A38E-281D7922B9E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8862438D-C0D9-4F9B-A38E-281D7922B9E3}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8862438D-C0D9-4F9B-A38E-281D7922B9E3}.Debug|x64.Build.0 = Debug|Any CPU
+		{8862438D-C0D9-4F9B-A38E-281D7922B9E3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8862438D-C0D9-4F9B-A38E-281D7922B9E3}.Debug|x86.Build.0 = Debug|Any CPU
+		{8862438D-C0D9-4F9B-A38E-281D7922B9E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8862438D-C0D9-4F9B-A38E-281D7922B9E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8862438D-C0D9-4F9B-A38E-281D7922B9E3}.Release|x64.ActiveCfg = Release|Any CPU
+		{8862438D-C0D9-4F9B-A38E-281D7922B9E3}.Release|x64.Build.0 = Release|Any CPU
+		{8862438D-C0D9-4F9B-A38E-281D7922B9E3}.Release|x86.ActiveCfg = Release|Any CPU
+		{8862438D-C0D9-4F9B-A38E-281D7922B9E3}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
