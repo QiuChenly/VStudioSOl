@@ -88,6 +88,7 @@
             // 
             this.txtpwd.Location = new System.Drawing.Point(48, 44);
             this.txtpwd.Name = "txtpwd";
+            this.txtpwd.PasswordChar = '*';
             this.txtpwd.Size = new System.Drawing.Size(229, 21);
             this.txtpwd.TabIndex = 5;
             // 
@@ -105,6 +106,7 @@
             this.picverify.Size = new System.Drawing.Size(200, 50);
             this.picverify.TabIndex = 7;
             this.picverify.TabStop = false;
+            this.picverify.Click += new System.EventHandler(this.picverify_Click);
             // 
             // FrmMain
             // 
@@ -121,6 +123,7 @@
             this.Controls.Add(this.btnlogin);
             this.Name = "FrmMain";
             this.Text = "bilibili登录";
+            this.Load += new System.EventHandler(this.FrmMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picverify)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
