@@ -49,11 +49,11 @@ public class qiuchenhelper
         return script.Eval(EvalStr).ToString();
     }
     #endregion
-    
+
     #region URL解码
     public string UrlDeCode(string str)
     {
-        return JavaScriptEval("function encode(str){return decodeURIComponent(str)}", "encode('"+str+"')");
+        return JavaScriptEval("function encode(str){return decodeURIComponent(str)}", "encode('" + str + "')");
     }
     #endregion
 
@@ -101,7 +101,7 @@ public class HttpHelper
         _headers.Clear();
         //随机一个useragent
         _useragent = _useragents[new Random().Next(0, _useragents.Length)];
-        //解决性能问题?
+        //解决性能问题? 是的没错
         ServicePointManager.DefaultConnectionLimit = ConnectionLimit;
     }
 
@@ -221,7 +221,7 @@ public class HttpHelper
     }
 
     /// <summary>
-    /// 发送GET请求
+    /// 发送GET请求重载1
     /// </summary>
     /// <param name="url"></param>
     /// <returns></returns>
@@ -275,7 +275,7 @@ public class HttpHelper
             html = GetStringFromResponse(response);
             if (request.CookieContainer != null)
             {
-                response.Cookies=request.CookieContainer.GetCookies(request.RequestUri);
+                response.Cookies = request.CookieContainer.GetCookies(request.RequestUri);
             }
             if (response.Cookies != null)
             {
@@ -375,6 +375,12 @@ public class HttpHelper
             return null;
         }
     }
+
+    /// <summary>
+    /// 获取图片流数据之类的专用Get请求
+    /// </summary>
+    /// <param name="url"></param>
+    /// <returns></returns>
     public MemoryStream HttpGetMemoryStream(String url)
     {
         try
@@ -404,17 +410,17 @@ public class HttpHelper
             {
                 request.Headers[hd.Key] = hd.Value;
             }
-
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
             Stream stream = response.GetResponseStream();
             MemoryStream ms = new MemoryStream();
-
             byte[] b = new byte[1024];
             while (true)
             {
                 int s = stream.Read(b, 0, b.Length);
                 ms.Write(b, 0, s);
-                if (s == 0 || s < b.Length)
+                //2017.02.05 秋城落叶修正
+                //修正Stream流读取缺失导致流数据不完整的BUG
+                if (s <= 0)
                 {
                     break;
                 }
@@ -550,7 +556,7 @@ public class HttpHelper
             for (int j = 0; j < cookiesarray_2.Length; j++)
             {
                 //2017.02.04 秋城落叶修正 百度Cookie误删除的问题
-                string[] cookiesarray_3 = cookiesarray_2[j].Trim().Split("=".ToCharArray(),2);
+                string[] cookiesarray_3 = cookiesarray_2[j].Trim().Split("=".ToCharArray(), 2);
                 if (cookiesarray_3.Length == 2)
                 {
                     string cname = cookiesarray_3[0].Trim();
