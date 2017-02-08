@@ -24,5 +24,10 @@ namespace WPF_TestDemo
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show(((100 - (6 > 5 ? 4 : 7 + 2) * 2) / 4).ToString());
+        }
     }
 }
