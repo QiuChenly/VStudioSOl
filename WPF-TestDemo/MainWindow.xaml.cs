@@ -27,7 +27,12 @@ namespace WPF_TestDemo
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(((100 - (6 > 5 ? 4 : 7 + 2) * 2) / 4).ToString());
+            int result = Convert.ToInt32(text1.Text.Trim()) + Convert.ToInt32(text2.Text.Trim());
+            MessageBox.Show(result.ToString());
+            for (int i = 0; i < 360; i++)
+            {
+                btn1.RenderTransform.Transform(new Point (i,i-10));
+            }
         }
     }
 }

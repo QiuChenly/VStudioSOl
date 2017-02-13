@@ -1,0 +1,30 @@
+﻿<Page
+    x:Class="AppTest.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AppTest"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Height="800" Width="600">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Height="800" VerticalAlignment="Top" Width="600">
+        <Button x:Name="btnstart" Content="登录" HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="57,758,0,10" Width="154" RenderTransformOrigin="0.5,0.5" Click="Button_Click">
+        </Button>
+        <CheckBox Content="自动拨号" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="439,2,0,0"/>
+        <Button x:Name="btnstop" Content="停止" HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="394,758,0,10" Width="154" RenderTransformOrigin="0.5,0.5"/>
+        <TextBlock HorizontalAlignment="Left" Margin="373,38,0,0" TextWrapping="Wrap" Text="拨号账号:" VerticalAlignment="Top" SelectionChanged="TextBlock_SelectionChanged"/>
+        <TextBlock HorizontalAlignment="Left" Margin="373,78,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="拨号密码:" SelectionChanged="TextBlock_SelectionChanged">
+
+        </TextBlock>
+        <TextBox HorizontalAlignment="Left" TextWrapping="Wrap" Text="PPPOEUser" VerticalAlignment="Top" Margin="448,34,0,0" Height="29" Width="142"/>
+        <TextBox x:Name="txtpwd" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Margin="448,71,0,0" Height="29" Width="142" TextCompositionChanged="txtpwd_TextCompositionChanged"/>
+        <Viewbox HorizontalAlignment="Left" Height="733" VerticalAlignment="Top" Width="358" Margin="10,10,0,0">
+            <ListView x:Name="list" Height="733" Width="358">
+                <ListViewItem Content="Test1"/>
+                <ListViewItem Content="Test2"/>
+            </ListView>
+        </Viewbox>
+        <TextBlock x:Name="label1" HorizontalAlignment="Left" Margin="474,124,0,0" TextWrapping="Wrap" Text="null" VerticalAlignment="Top"/>
+
+    </Grid>
+</Page>

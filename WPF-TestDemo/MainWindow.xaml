@@ -5,9 +5,51 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_TestDemo"
         mc:Ignorable="d"
-        Title="Main" Height="350" Width="525">
-    <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="432,290,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        Title="鬼畜计算器" Height="169.7" Width="351.422">
+    <Grid RenderTransformOrigin="0.504,0.53" OpacityMask="Black" Background="{DynamicResource {x:Static SystemColors.MenuBrushKey}}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="btn1" Content="计算" HorizontalAlignment="Left" Margin="155,100,0,0" VerticalAlignment="Top" Width="29" Click="Button_Click" RenderTransformOrigin="0.5,0.5" Height="29">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <TextBox x:Name="text2"  HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="185,21,0,0" RenderTransformOrigin="0.5,0.5" >
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-173.187"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <TextBox x:Name="text1" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="4,20,0,0" RenderTransformOrigin="0.5,0.5">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-14.284"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
+        <Label Content="+" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.529,0.529" Margin="137,14,0,0" Height="25" Width="19">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-17.323"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
 
     </Grid>
 </Window>
